@@ -122,6 +122,11 @@ input:checked + .slider:before {
   transform: translateX(12px);
 }
 
+main{
+    background: #f7f7f7;
+    background: linear-gradient(90deg,rgba(247, 247, 247, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(69, 25, 25, 1) 100%);
+}
+
 .hero{
     padding: 50px 40px;
 }
@@ -192,6 +197,5 @@ input:checked + .slider:before {
     display: flex;
     justify-content: space-between;
     height: 350px;
-    background: #f7f7f7;
-    background: linear-gradient(90deg,rgba(247, 247, 247, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(69, 25, 25, 1) 100%);
 }
+
