@@ -3,7 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Recife Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
   </head>
-  <body></body>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo-title">
+        <img src="./ref/chef.png" />
+        <div class="nav-title">
+          <a href="index.html">Recipe Finder</a>
+          <p>Discover . Cook . Enjoy</p>
+        </div>
+      </div>
+      <ul class="nav-options">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li>
+          <a href="fav.html" class="nav-link">Favorites</a>
+        </li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+      <ul class="nav-options">
+        <li>
+          <i class="fa-regular fa-sun"></i>
+          <label class="switch">
+            <input type="checkbox" unchecked />
+            <span class="slider"></span>
+          </label>
+          <i class="fa-regular fa-moon"></i>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div class="banner">
+        <div class="hero">
+          <h1>Find your next <br />favorite <span>Recipe</span></h1>
+          <p id="p-1">
+            Explore thousands of delicious recipes from around the world.
+          </p>
+          <p id="p-2">Search cook and enjoy!</p>
+          <div class="search">
+            <form action="/search-results" method="GET">
+              <i class="fas fa-search"></i>
+              <input
+                type="search"
+                id="site-search"
+                name="q"
+                placeholder="Search recipes...(e.g. pasta, cake, biriyani)"
+              />
+              <button type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="img">
+          <img src="./ref/cake.png" alt="img not loading" width="400px"/>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="app.js"></script>
+  </body>
 </html>
