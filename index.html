@@ -30,7 +30,7 @@
         <li>
           <i class="fa-regular fa-sun"></i>
           <label class="switch">
-            <input type="checkbox" unchecked id="theme-toggle"/>
+            <input type="checkbox" unchecked id="theme-toggle" />
             <span class="slider"></span>
           </label>
           <i class="fa-regular fa-moon"></i>
@@ -64,71 +64,101 @@
       </div>
 
       <div class="content">
-        <div class="card" id="card-1">
-          <div class="img-btn">
-            <img src="./ref/banner-img.png" class="card-img" />
-            <button type="button">
-              <i class="fa-regular fa-heart"></i>
-            </button>
+        <div class="popular-cards">
+          <h3>Pupular Recipes</h3>
+          <div class="cards">
+            <div class="card" id="card-1">
+              <div class="img-btn">
+                <img src="./ref/banner-img.png" class="card-img" />
+                <button type="button">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <h1>Biriyani</h1>
+              <p class="cuisine">Indian</p>
+              <p class="rating">4.6star</p>
+              <p class="duration">1hour</p>
+              <p class="difficulty">Easy</p>
+            </div>
+            <div class="card" id="card-2">
+              <div class="img-btn">
+                <img src="./ref/banner-img.png" class="card-img" />
+                <button type="button">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <h1>Biriyani</h1>
+              <p class="cuisine">Indian</p>
+              <p class="rating">4.6star</p>
+              <p class="duration">1hour</p>
+              <p class="difficulty">Easy</p>
+            </div>
+            <div class="card" id="card-3">
+              <div class="img-btn">
+                <img src="./ref/banner-img.png" class="card-img" />
+                <button type="button">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+              <h1>Biriyani</h1>
+              <p class="cuisine">Indian</p>
+              <p class="rating">4.6star</p>
+              <p class="duration">1hour</p>
+              <p class="difficulty">Easy</p>
+            </div>
           </div>
-          <h1>Biriyani</h1>
-          <p class="cuisin">Indian</p>
-          <p class="rating">4.6star</p>
-          <p class="duration">1hour</p>
-          <p class="difficulty">Easy</p>
         </div>
-        <div class="card" id="card-1">
-          <div class="img-btn">
-            <img src="./ref/banner-img.png" class="card-img" />
-            <button type="button">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-          </div>
-          <h1>Biriyani</h1>
-          <p class="cuisin">Indian</p>
-          <p class="rating">4.6star</p>
-          <p class="duration">1hour</p>
-          <p class="difficulty">Easy</p>
-        </div>
-        <div class="card" id="card-1">
-          <div class="img-btn">
-            <img src="./ref/banner-img.png" class="card-img" />
-            <button type="button">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-          </div>
-          <h1>Biriyani</h1>
-          <p class="cuisin">Indian</p>
-          <p class="rating">4.6star</p>
-          <p class="duration">1hour</p>
-          <p class="difficulty">Easy</p>
-        </div>
-        <div class="card" id="card-1">
-          <div class="img-btn">
-            <img src="./ref/banner-img.png" class="card-img" />
-            <button type="button">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-          </div>
-          <h1>Biriyani</h1>
-          <p class="cuisin">Indian</p>
-          <p class="rating">4.6star</p>
-          <p class="duration">1hour</p>
-          <p class="difficulty">Easy</p>
-        </div>
-        <div class="card" id="card-1">
-          <div class="img-btn">
-            <img src="./ref/banner-img.png" class="card-img" />
-            <button type="button">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-          </div>
-          
-        <div class="filter">
-          <form>
 
-          </form>
-        </div>
+        <form action="/submit-data" method="POST" class="filter">
+          <h3>Filter Recipes</h3>
+          <div>
+            <label for="cuisineFilter">Cuisine</label>
+            <select id="cuisineFilter">
+              <option value="all">All Cuisine</option>
+              <option value="indian">Indian</option>
+              <option value="italian">Italian</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="mealFilter">Meal Type</label>
+            <select id="mealFilter">
+              <option value="all">All Meals</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="dinner">Dinner</option>
+            </select>
+          </div>
+
+          <div>
+          <label for="difficultyFilter">Difficulty</label>
+          <select id="difficultyFilter">
+            <option value="all">All Difficulties</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          </div>
+
+          <div>
+          <label for="ratingFilter">Minimum Rating</label>
+          <select id="ratingFilter">
+            <option value="all">Any Rating</option>
+            <option value="4">4★ & Above</option>
+            <option value="4.5">4.5★ & Above</option>
+          </select>
+          </div>
+
+          <div>
+          <label for="sortFilter">Sort By</label>
+          <select id="sortFilter">
+            <option value="popular">Most Popular</option>
+            <option value="rating">Highest Rated</option>
+            <option value="time">Cooking Time</option>
+            <option value="az">A-Z</option>
+          </select>
+          </div>
+          <button type="submit">Apply Filter</button>
+        </form>
       </div>
     </main>
     <footer></footer>

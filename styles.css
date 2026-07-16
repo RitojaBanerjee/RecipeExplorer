@@ -270,16 +270,27 @@ input:checked + .slider::before {
 
 
 /* ===========================
-   CONTENT
+   CARDS
 =========================== */
 
-.content {
+.popular-cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.popular-cards h3{
+    margin: 50px 0 20px 30px;
+    padding: 0;
+}
+
+.cards {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
 
-  padding: 20px 30px 50px;
+  padding: 0px 30px 50px;
 
   background: var(--bg-color);
 }
@@ -291,7 +302,6 @@ input:checked + .slider::before {
 .card {
   width: 300px;
 
-  margin-top: 30px;
   padding: 15px;
 
   background: var(--surface-color);
@@ -434,23 +444,59 @@ input {
   font-family: inherit;
 }
 
+
 /* ===========================
-   SCROLLBAR
-=========================== 
+   FILTER
+=========================== */
 
-::-webkit-scrollbar {
-  width: 10px;
+.filter{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+
+  width: 300px;
+
+  background: var(--surface-color);
+  color: var(--text-color);
+
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+
+  margin: 20px 0;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--bg-color);
+.filter h3{
+    color: var(--accent-color);
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--accent-color);
+.filter div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-hover);
+.filter div label{
+    font-weight: bold;
 }
-*/
+
+.filter select{
+    background-color: var(--surface-color);
+    color: var(--secondary-text);
+    border-color: var(--border-color);
+}
+
+.filter button{
+    border-radius: 20px;
+    border-color: var(--accent-hover);
+    background-color: var(--surface-color);
+    color: var(--text-color);
+}
+
+
+/* ==============================
+   COONTENT
+===============================*/
+.content{
+    display: flex;
+}
