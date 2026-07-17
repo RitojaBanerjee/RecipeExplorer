@@ -74,11 +74,12 @@
                   <i class="fa-regular fa-heart"></i>
                 </button>
               </div>
-              <h1>Biriyani</h1>
-              <p class="cuisine">Indian</p>
-              <p class="rating">4.6star</p>
-              <p class="duration">1hour</p>
-              <p class="difficulty">Easy</p>
+              <h1></h1>
+              <p class="cuisine"></p>
+              <p class="rating"></p>
+              <p class="duration"></p>
+              <p class="difficulty"></p>
+              <button>Show Details</button>
             </div>
             <div class="card" id="card-2">
               <div class="img-btn">
@@ -88,10 +89,11 @@
                 </button>
               </div>
               <h1>Biriyani</h1>
-              <p class="cuisine">Indian</p>
-              <p class="rating">4.6star</p>
-              <p class="duration">1hour</p>
-              <p class="difficulty">Easy</p>
+              <p class="cuisine"></p>
+              <p class="rating"></p>
+              <p class="duration"></p>
+              <p class="difficulty"></p>
+              <button>Show Details</button>
             </div>
             <div class="card" id="card-3">
               <div class="img-btn">
@@ -101,10 +103,11 @@
                 </button>
               </div>
               <h1>Biriyani</h1>
-              <p class="cuisine">Indian</p>
-              <p class="rating">4.6star</p>
-              <p class="duration">1hour</p>
-              <p class="difficulty">Easy</p>
+              <p class="cuisine"></p>
+              <p class="rating"></p>
+              <p class="duration"></p>
+              <p class="difficulty"></p>
+              <button>Show Details</button>
             </div>
           </div>
         </div>
@@ -130,39 +133,67 @@
           </div>
 
           <div>
-          <label for="difficultyFilter">Difficulty</label>
-          <select id="difficultyFilter">
-            <option value="all">All Difficulties</option>
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
+            <label for="difficultyFilter">Difficulty</label>
+            <select id="difficultyFilter">
+              <option value="all">All Difficulties</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
           </div>
 
           <div>
-          <label for="ratingFilter">Minimum Rating</label>
-          <select id="ratingFilter">
-            <option value="all">Any Rating</option>
-            <option value="4">4★ & Above</option>
-            <option value="4.5">4.5★ & Above</option>
-          </select>
+            <label for="ratingFilter">Minimum Rating</label>
+            <select id="ratingFilter">
+              <option value="all">Any Rating</option>
+              <option value="4">4★ & Above</option>
+              <option value="4.5">4.5★ & Above</option>
+            </select>
           </div>
 
           <div>
-          <label for="sortFilter">Sort By</label>
-          <select id="sortFilter">
-            <option value="popular">Most Popular</option>
-            <option value="rating">Highest Rated</option>
-            <option value="time">Cooking Time</option>
-            <option value="az">A-Z</option>
-          </select>
+            <label for="sortFilter">Sort By</label>
+            <select id="sortFilter">
+              <option value="popular">Most Popular</option>
+              <option value="rating">Highest Rated</option>
+              <option value="time">Cooking Time</option>
+              <option value="az">A-Z</option>
+            </select>
           </div>
           <button type="submit">Apply Filter</button>
         </form>
       </div>
     </main>
-    <footer></footer>
 
-    <script src="app.js"></script>
+    <div id="recipeModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModalBtn">&times;</span>
+        <div id="modalBody">
+          <h2 id="modalRecipeTitle"></h2>
+          <img
+            id="modalRecipeImg"
+            src=""
+            alt="Recipe Image"
+            style="width: 100%; border-radius: 8px"
+          />
+          <h3>Ingredients:</h3>
+          <ul id="modalIngredients"></ul>
+          <h3>Instructions:</h3>
+          <p id="modalInstructions"></p>
+          <h5>Prep Time Minutes:</h5>
+          <span id="modalPrepTime"></span>
+          <h5>Cook Time Minutes:</h5>
+          <span id="modalCookTime"></span>
+          <h5>Servings:</h5>
+          <span id="modalServingAmt"></span>
+          <h5>Calories PerServing:</h5>
+          <span id="modaCal"></span>
+          <h5>Meal Type:</h5>
+          <span id="modalMealType"></span>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/app.js"></script>
   </body>
 </html>
