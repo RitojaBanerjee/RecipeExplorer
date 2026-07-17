@@ -555,26 +555,7 @@ input {
   padding: 20px;
   border-radius: 10px;
   position: relative;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-#modalRecipeImg {
-  width: 100%;
-  border-radius: 10px;
-  margin: 15px 0;    
-  max-height: 300px;
-  object-fit: cover;
-}
-
-.modal-content{
-    animation:popup .3s ease;
+  animation:popup .3s ease;
 }
 
 @keyframes popup{
@@ -586,4 +567,24 @@ input {
         transform:scale(1);
         opacity:1;
     }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+#modalBody h2{
+  color: var(--accent-color);
+}
+
+#modalRecipeImg {
+  width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;    
+  max-height: 300px;
+  object-fit: cover;
 }
