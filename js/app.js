@@ -1,3 +1,6 @@
+/* ===========================
+   THEME FUNCTIONALITY
+=========================== */
 //Theme changing functiionality
 const themeToggle = document.querySelector("#theme-toggle");
 // Load saved theme
@@ -19,7 +22,11 @@ themeToggle.addEventListener("change", () => {
 });
 
 // API fetching functionality
-const API = "https://dummyjson.com/recipes";
+const API = "https://dummyjson.com/recipes?limit=0";
+
+/* ==============================
+   3 RANDOM 3 CARD FUNCTIONALITY
+================================= */
 let recipe_names = document.querySelectorAll(".card h1");
 let recipe_cuisines = document.querySelectorAll(".cuisine");
 let recipe_ratings = document.querySelectorAll(".rating");
@@ -27,16 +34,21 @@ let recipe_durations = document.querySelectorAll(".duration");
 let recipe_difficulties = document.querySelectorAll(".difficulty");
 let recipe_imgs = document.querySelectorAll(".card-img");
 const details_btn = document.querySelectorAll(".details");
+let all_recipe = [];
 
 const getData = async () => {
   let response = await fetch(API);
   let recipe_data = await response.json();
   const used = [];
 
+  for (const recipe of recipe_data.recipes) {
+    all_recipe.push(recipe.name.toLowerCase());
+  }
+
   for (let i = 0; i < 3; i++) {
     let random_no;
     do {
-       random_no = Math.floor(Math.random() * 30);
+      random_no = Math.floor(Math.random() * 50);
     } while (used.includes(random_no));
     const recipe = recipe_data.recipes[random_no];
     used.push(random_no);
@@ -121,25 +133,89 @@ window.addEventListener("click", (event) => {
     modal.style.display = "none";
   }
 });
-/*
-// Search recipe functionality
+
+/* ===========================
+   SEARCH FUNCTIONALITY
+=========================== */
 const SEARCH_API = "https://dummyjson.com/recipes/search?q=";
 const form = document.querySelector("form");
+const search_input = document.querySelector("#site-search");
+const suggestion_box = document.querySelector(".suggestion-box");
+const popular_cards = document.querySelector(".popular-cards");
+const searched_card = document.querySelector(".searched-card");
+
+const searched_img = document.querySelector(".searched-card .card-img");
+const searched_name = document.querySelector(".searched-card h1");
+const searched_cuisine = document.querySelector(".searched-card .cuisine");
+const searched_rating = document.querySelector(".searched-card .rating");
+const searched_duration = document.querySelector(".searched-card .duration");
+const searched_difficulty = document.querySelector(
+  ".searched-card .difficulty",
+);
+const searched_detail_btn = document.querySelector(".searched-card .details");
+
+search_input.addEventListener("input", () => {
+  const value = search_input.value.toLowerCase();
+
+  if (value === "") {
+    suggestion_box.innerHTML = "";
+    popular_cards.style.display = "flex";
+    searched_card.style.display = "none";
+    searched_card.classList.remove("active");
+    return;
+  }
+
+  const result = all_recipe
+    .filter((recipe) => {
+      return recipe.toLowerCase().includes(value);
+    })
+    .slice(0, 3);
+
+  suggestion_box.innerHTML = "";
+
+  result.forEach((recipe) => {
+    const div = document.createElement("div");
+    div.classList.add("suggestion-item");
+    div.innerText = recipe;
+    suggestion_box.appendChild(div);
+
+    div.addEventListener("click", () => {
+      search_input.value = recipe;
+      suggestion_box.innerHTML = "";
+    });
+  });
+});
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const query = new FormData(form).get("q");
-  const formated_query = (query.toLowerCase().split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" "));
-  
-  searchRecipe(formated_query);
+  const query = new FormData(form).get("q").trim();
+
+  if (query) {
+    searchRecipe(query);
+  }
 });
 
-const searchRecipe = async(query) => {
+const searchRecipe = async (query) => {
   let response = await fetch(`${SEARCH_API}${query}`);
-  
+
   let recipe_data = await response.json();
-  console.log(recipe_data);
-  
-}
-*/
+
+  popular_cards.style.display = "none";
+  searched_card.style.display = "flex";
+  searched_card.classList.add("active");
+
+  searched_img.src = recipe_data.recipes[0].image;
+  searched_name.innerText = recipe_data.recipes[0].name;
+  searched_cuisine.innerText = recipe_data.recipes[0].cuisine;
+  searched_rating.innerText = recipe_data.recipes[0].rating + " star";
+  searched_duration.innerText =
+    recipe_data.recipes[0].prepTimeMinutes +
+    recipe_data.recipes[0].cookTimeMinutes +
+    " min";
+  searched_difficulty.innerText = recipe_data.recipes[0].difficulty;
+
+  searched_detail_btn.onclick = () => {
+    showRecipeDetails(recipe_data.recipes[0]);
+  };
+};

@@ -45,6 +45,52 @@ body.dark {
   );
 }
 
+
+/* ==============================
+   ABOUT - PAGE
+===============================*/
+.abt{
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background: var(--banner-bg);
+}
+
+.about-div{
+    width: min(750px, 90%);
+    text-align: center;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.15);
+}
+
+.about-div h1{
+    color: var(--accent-color);
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.about-div h3{
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.about-div p{
+    color: var(--secondary-text);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+
+/* ===========================
+   HOME PAGE
+=========================== */
+
 /* ===========================
    GLOBAL
 =========================== */
@@ -285,14 +331,14 @@ input:checked + .slider::before {
 }
 
 .cards {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
 
   padding: 0px 30px 50px;
 
   background: var(--bg-color);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 25px;
 }
 
 /* ===========================
@@ -300,19 +346,19 @@ input:checked + .slider::before {
 =========================== */
 
 .card {
-  width: 300px;
 
-  padding: 15px;
+  width:100%;
+  max-width:300px;
 
-  background: var(--surface-color);
-  color: var(--text-color);
+  padding:15px;
+  background:var(--surface-color);
+  color:var(--text-color);
 
-  border: 1px solid var(--border-color);
-  border-radius: 18px;
+  border:1px solid var(--border-color);
+  border-radius:18px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display:flex;
+  flex-direction:column;
 }
 
 .card h1 {
@@ -462,40 +508,43 @@ input {
 =========================== */
 
 .filter{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 40px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
 
-  width: 300px;
+  padding:35px;
 
-  background: var(--surface-color);
-  color: var(--text-color);
+  background:var(--surface-color);
 
-  border: 1px solid var(--border-color);
-  border-radius: 18px;
+  border:1px solid var(--border-color);
+  border-radius:18px;
 
-  margin: 20px 0;
+  position:sticky;
+  top:20px;
+
+  height:fit-content;
 }
 
 .filter h3{
-    color: var(--accent-color);
+  color: var(--accent-color);
+  margin-bottom:10px;
 }
 
 .filter div{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .filter div label{
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .filter select{
-    background-color: var(--surface-color);
-    color: var(--secondary-text);
-    border-color: var(--border-color);
+  padding:8px;
+  background-color: var(--surface-color);
+  color: var(--secondary-text);
+  border-color: var(--border-color);
 }
 
 .filter button{
@@ -503,34 +552,59 @@ input {
     border-color: var(--accent-hover);
     background-color: var(--surface-color);
     color: var(--text-color);
+    padding:10px;
 }
 
 
 /* ==============================
    COONTENT
 ===============================*/
-.content{
-    display: flex;
+.content {
+  display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+
+    width: 95%;
+    margin: 30px auto;
+    align-items: start;
 }
+
+
 
 
 /* ==============================
-   ABOUT - DIV
+   SUGGESTION BOX
 ===============================*/
-.about-div{
-  width: min(600px, 90%);
-  margin: 100px auto 0;
-  text-align: center;
+
+.suggestion-box {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  margin-top: 5px;
+  overflow: hidden;
 }
 
-.about-div h1{
-  color: var(--accent-color);
-}
-
-.about-div h3{
+.suggestion-item {
+  padding: 10px 15px;
+  cursor: pointer;
   color: var(--text-color);
-  margin-bottom: 80px;
+  background-color: var(--surface-color);
 }
+
+.suggestion-item:hover {
+  background: #f2f2f2;
+}
+
+.searched-card{
+  display: none;
+}
+
+.searched-card.active{
+    display:flex;
+    justify-content:center;
+}
+
+
 
 
 /* ==============================

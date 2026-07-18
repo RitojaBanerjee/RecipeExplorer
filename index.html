@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recife Finder</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -52,11 +52,12 @@
                 type="search"
                 id="site-search"
                 name="q"
-                placeholder="Search recipes...(e.g. pasta, cake, biriyani)"
+                placeholder="Search recipes...(e.g. pasta, pizza, biriyani)"
               />
               <button type="submit">Search</button>
             </form>
           </div>
+          <div class="suggestion-box"></div>
         </div>
         <div class="img">
           <img src="./ref/banner-img.png" alt="img not loading" width="350px" />
@@ -64,10 +65,57 @@
       </div>
 
       <div class="content">
-        <div class="popular-cards">
-          <h3>Pupular Recipes</h3>
-          <div class="cards">
-            <div class="card" id="card-1">
+        <div class="recipe-container">
+          <div class="popular-cards">
+            <h3>Pupular Recipes</h3>
+            <div class="cards">
+              <div class="card" id="card-1">
+                <div class="img-btn">
+                  <img src="" class="card-img" />
+                  <button type="button">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <h1></h1>
+                <p class="cuisine"></p>
+                <p class="rating"></p>
+                <p class="duration"></p>
+                <p class="difficulty"></p>
+                <button class="details">Show Details</button>
+              </div>
+              <div class="card" id="card-2">
+                <div class="img-btn">
+                  <img src="" class="card-img" />
+                  <button type="button">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <h1>Biriyani</h1>
+                <p class="cuisine"></p>
+                <p class="rating"></p>
+                <p class="duration"></p>
+                <p class="difficulty"></p>
+                <button class="details">Show Details</button>
+              </div>
+              <div class="card" id="card-3">
+                <div class="img-btn">
+                  <img src="" class="card-img" />
+                  <button type="button">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <h1>Biriyani</h1>
+                <p class="cuisine"></p>
+                <p class="rating"></p>
+                <p class="duration"></p>
+                <p class="difficulty"></p>
+                <button class="details">Show Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="searched-card">
+            <div class="card" id="card">
               <div class="img-btn">
                 <img src="" class="card-img" />
                 <button type="button">
@@ -75,34 +123,6 @@
                 </button>
               </div>
               <h1></h1>
-              <p class="cuisine"></p>
-              <p class="rating"></p>
-              <p class="duration"></p>
-              <p class="difficulty"></p>
-              <button class="details">Show Details</button>
-            </div>
-            <div class="card" id="card-2">
-              <div class="img-btn">
-                <img src="" class="card-img" />
-                <button type="button">
-                  <i class="fa-regular fa-heart"></i>
-                </button>
-              </div>
-              <h1>Biriyani</h1>
-              <p class="cuisine"></p>
-              <p class="rating"></p>
-              <p class="duration"></p>
-              <p class="difficulty"></p>
-              <button class="details">Show Details</button>
-            </div>
-            <div class="card" id="card-3">
-              <div class="img-btn">
-                <img src="" class="card-img" />
-                <button type="button">
-                  <i class="fa-regular fa-heart"></i>
-                </button>
-              </div>
-              <h1>Biriyani</h1>
               <p class="cuisine"></p>
               <p class="rating"></p>
               <p class="duration"></p>
